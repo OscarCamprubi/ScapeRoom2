@@ -21,8 +21,8 @@ window.Vue = require('vue').default;
 
 Vue.component('welcome', require('./components/Welcome.vue').default);
 Vue.component('carousel-main', require('./components/Welcome').default);
-Vue.component('llista-reserves', require('./components/LlistaReserves').default);
-Vue.component('crea-reserva', require('./components/CreaReserva').default);
+Vue.component('llista-vouchers', require('./components/LlistaVouchers').default);
+Vue.component('crea-voucher', require('./components/CreaVoucher').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

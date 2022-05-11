@@ -8,13 +8,19 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $users = User::all();
+        return $users;
+    }
     public function list()
     {
+        $users = User::all();
         if (Auth::id() !== null){
             $user = User::find(Auth::id());
             return view('user.llistaUsers')->with('users', User::all())->with('user',$user);
         }
-        return view('user.llistaUsers')->with('users', User::all());
+        return view('user.llistaUsers')->with('users',json_encode($users));
     }
 
     public function show($idUser)

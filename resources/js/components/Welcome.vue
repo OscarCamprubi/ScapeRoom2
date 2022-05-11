@@ -18,13 +18,13 @@ export default {
     data(){
         return {
             slides: [
-                'https://picsum.photos/id/230/600/300',
-                'https://picsum.photos/id/231/600/300',
-                'https://picsum.photos/id/232/600/300',
-                'https://picsum.photos/id/233/600/300',
-                'https://picsum.photos/id/234/600/300',
-                'https://picsum.photos/id/235/600/300',
-                'https://picsum.photos/id/236/600/300',
+                'https://picsum.photos/id/1019/5472/3648',
+                'https://picsum.photos/id/1022/6000/3376',
+                'https://picsum.photos/id/1040/4496/3000',
+                'https://picsum.photos/id/1041/5184/2916',
+                'https://picsum.photos/id/1050/6000/4000',
+                'https://picsum.photos/id/1067/5760/3840',
+                'https://picsum.photos/id/108/2000/1333',
             ]
         }
     },

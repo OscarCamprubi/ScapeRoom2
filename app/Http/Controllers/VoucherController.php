@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class VoucherController extends Controller
 {
+    public function index()
+    {
+        $vouchers = Voucher::all();
+        return $vouchers;
+    }
+
     public function list()
     {
         if (Auth::id() !== null) {

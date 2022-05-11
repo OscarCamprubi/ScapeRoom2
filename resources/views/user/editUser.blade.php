@@ -20,24 +20,40 @@
             <h6 class="alert alert-danger">{{$message}}</h6>
             @enderror
         </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Password</label>
-            <input type="password" name="password" id="password" class="form-control"
-                   value="{{old('password',$userEdit->password)}}">
-            @error('password')
-            <h6 class="alert alert-danger">{{$message}}</h6>
-            @enderror
-        </div>
-        <div class="mb-3">
-            <label for="bornDate" class="form-label">Data de Naixement</label>
-            <input type="date" name="bornDate" id="bornDate" class="form-control"
-                   value="{{old('bornDate',$userEdit->bornDate)}}">
-            @error('bornDate')
-            <h6 class="alert alert-danger">{{$message}}</h6>
-            @enderror
-        </div>
+        @if(isset($user))
+            @if($user->role === 1)
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label for="role" class="form-label">Data de Naixement</label>
+                        <input type="date" name="role" id="role" class="form-control"
+                               value="{{old('bornDate',$userEdit->bornDate)}}">
+                        @error('bornDate')
+                        <h6 class="alert alert-danger">{{$message}}</h6>
+                        @enderror
+                    </div>
+                    <div class="mb-3 col">
+                        <label for="bornDate" class="form-label">Rol</label>
+                        <select class="form-select" aria-label="Default select example"
+                                name="role">
+                            <option {{ $userEdit->role === 1 ? 'selected' : '' }} value="1">Admin</option>
+                            <option {{ $userEdit->role === 2 ? 'selected' : '' }} value="2">Current User</option>
+                            <option {{ $userEdit->role === 3 ? 'selected' : '' }} value="3">Empleat</option>
+                        </select>
+                    </div>
+                </div>
+            @endif
+        @else
+            <div class="mb-3 col">
+                <label for="role" class="form-label">Data de Naixement</label>
+                <input type="date" name="role" id="role" class="form-control"
+                       value="{{old('bornDate',$userEdit->bornDate)}}">
+                @error('bornDate')
+                <h6 class="alert alert-danger">{{$message}}</h6>
+                @enderror
+            </div>
+        @endif
 
-        <input type="submit" class="btn btn-success mt-3" value="Crea">
+        <input type="submit" class="btn btn-success mt-3" value="Edita">
     </form>
 @endsection
 

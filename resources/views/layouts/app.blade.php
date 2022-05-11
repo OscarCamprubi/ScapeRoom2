@@ -27,29 +27,34 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/list-joc">Jocs</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/list-sala">Sala</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/list-participant">Participant</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/list-voucher">Voucher</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/list-user">Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/list-valoracio">Valoracions</a>
-                </li>
+                @if(isset($user))
+                    @if($user->role === 1)
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/list-sala">Sala</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/list-participant">Participant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/list-voucher">Voucher</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/list-user">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/list-valoracio">Valoracions</a>
+                        </li>
+                    @endif
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/list-reserva">Reserves</a>
                 </li>
+
             </ul>
         </div>
         @if(isset($user))
             <div>
-                <a class="m-3 text-decoration-none text-black" href="logout">LogOut</a>
+                <a class="m-3 text-decoration-none text-black" href="/logout">LogOut</a>
             </div>
         @else
             <div>

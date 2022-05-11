@@ -15,6 +15,14 @@ class CreateReservesTable extends Migration
     {
         Schema::create('reserves', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('idEmpleat');
+            $table->foreign('idEmpleat')->references('id')->on('users');
+            $table->unsignedBigInteger('idUser');
+            $table->foreign('idUser')->references('id')->on('users');
+            $table->unsignedBigInteger('idSala');
+            $table->foreign('idSala')->references('id')->on('sales');
+            $table->unsignedBigInteger('idVoucher');
+            $table->foreign('idVoucher')->references('id')->on('vouchers');
             $table->timestamps();
         });
     }

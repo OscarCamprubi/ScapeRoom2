@@ -51,12 +51,12 @@ class ReservaController extends Controller
 
 
         $res = new Reserva();
-        $res->id_usuari = Auth::id();
-        $res->id_sala = $req['idSala'];
+        $res->idUser = Auth::id();
+        $res->idSala = $req['idSala'];
         if (isset($req['idEmpleat'])){
             $res->idEmpleat = $req['idEmpleat'];
         }
-        $res->id_voucher = $req['idVoucher'];
+        $res->idVoucher = $req['idVoucher'];
         $res->save();
         if (Auth::id() !== null) {
             $user = User::find(Auth::id());

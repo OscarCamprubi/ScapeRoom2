@@ -7,9 +7,16 @@ use App\Models\Sala;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Ramsey\Uuid\Type\Integer;
 
 class SalaController extends Controller
 {
+    public function index()
+    {
+        $sales = Sala::all();
+        return $sales;
+    }
+
     public function list()
     {
         if (Auth::id() !== null) {
@@ -35,9 +42,11 @@ class SalaController extends Controller
 
 
         $sala = new Sala();
-        $sala->joc_id = $req['idJoc'];
+        $sala->idJoc = $req['idJoc'];
         $sala->aforament = $req['aforament'];
+        var_dump($sala->idJoc);
         $sala->save();
+
         if (Auth::id() !== null) {
             $user = User::find(Auth::id());
             return redirect('/list-sala/')->with('user', $user);

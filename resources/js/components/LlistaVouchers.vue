@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1 class="text-center">Llistat de Reserves</h1>
-        <a class="btn btn-success" href="create-reserva">Crea</a>
+        <h1 class="text-center">Llistat de Vouchers</h1>
+        <a class="btn btn-success" href="/create-voucher">Crea</a>
         <table class="table">
             <thead>
             <tr>
@@ -12,7 +12,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="reserva in reserves" :key="reserva.id">
+            <tr v-for="voucher in vouchers" :key="voucher.id">
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -25,11 +25,11 @@
 
 <script>
 export default {
-    name: "LlistaReserves",
+    name: "LlistaVouchers",
 
     data() {
         return {
-            reserves: []
+            vouchers: []
         }
     },
 
@@ -39,8 +39,8 @@ export default {
 
     methods: {
         async list() {
-            const res = await axios.get('reserves');
-            this.reserves = res.data;
+            const res = await axios.get('vouchers');
+            this.vouchers = res.data;
         }
     },
 }

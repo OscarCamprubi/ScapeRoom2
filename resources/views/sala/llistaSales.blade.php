@@ -3,6 +3,7 @@
     Llista de Sales
 @endsection
 @section('contingut')
+    <a class="btn btn-success" href="/create-sala">Crea</a>
     <table class="table">
         <thead>
         <tr>
